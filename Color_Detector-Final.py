@@ -4,6 +4,11 @@ import pandas as pd
 from gooey import Gooey, GooeyParser
 
 @Gooey(program_name="AML-1214 Color Detector",
+       terminal_font_size=10,
+       terminal_font_color='red',
+       clear_before_run=True,
+       program_description='Python TERM Project',
+       default_size=(700, 500),
        menu=[{'name': 'Group Member', 'items': [{
            'type': 'AboutDialog',
            'menuTitle': 'Tusker',
@@ -18,8 +23,8 @@ def parse_args():
 
     return parser.parse_args()
 args = parse_args()
-print(f'Processing Image.....\n\nPress ESC to close the Image Window')
 img_path=(args.Image_Path)
+print(f'Processing Image.....{img_path}\n\nPress ESC to close the Image Window')
 
 # Opening the image file from file chooser
 img = cv2.imread(img_path)
